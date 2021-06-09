@@ -1,5 +1,6 @@
 #!/bin/bash
 PackageRef='PackageReference'
+cat /version_list.txt
 MinVersions=`cat /version_list.txt`
 ChecksCount=${#MinVersions[@]}
 
@@ -9,9 +10,10 @@ for file in $FILES; do
   echo file=$file
   for (( i=0; i<$ChecksCount; i+=2 ));
   do
-    Reference='"'${MinVersions[i]}'"'
-    echo Reference=\'$Reference\'
-    found=$(grep $PackageRef $file | grep $Reference)
+    #Reference='"'${MinVersions[i]}'"'
+    Reference=${MinVersions[i]}
+    echo i=$i, Reference=\'$Reference\'
+    #found=$(grep $PackageRef $file | grep $Reference)
     #if [ "$found" ]; then
     #  RefMinVersion=${MinVersions[i+1]}
     #  ArrRefMinVersion=(${RefMinVersion//./ })
