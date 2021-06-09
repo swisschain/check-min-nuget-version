@@ -1,1 +1,1 @@
-'Lykke.SettingsReader' '1.1.4' 'Lykke.Logs' '5.1.0' 'Lykke.AzureStorage' '8.6.0' 'Microsoft.ApplicationInsights.AspNetCore' '2.2.0' 'Lykke.Common' '7.0.3' 'Lykke.SlackNotification.AzureQueue' '2.0.3' 'Lykke.Cqrs' '4.8.0' 'Lykke.Sdk' '3.0.1' 'Lykke.AzureQueueIntegration' '2.2.0' 'Lykke.JobTriggers' '2.2.0' 'Lykke.Common.ApiLibrary' '1.9.0' 'Lykke.RabbitMqBroker' '7.5.1' 'Lykke.Messaging' '5.1.0' 'Lykke.Messaging.RabbitMq' '2.1.0' 'Lykke.RabbitMq.Azure' '5.1.0' 'Lykke.MonitoringServiceApiCaller' '1.6.0'
+'Lykke.SettingsReader' '1.1.4' 
