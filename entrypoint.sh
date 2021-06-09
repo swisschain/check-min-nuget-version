@@ -21,6 +21,7 @@ for file in $FILES; do
     #grep $PackageRef $file
     if [ "$found" ]; then
       RefMinVersion=${MinVersions[i+1]}
+      echo found=$found
       #echo RefMinVersion=$RefMinVersion
       ArrRefMinVersion=(${RefMinVersion//./ })
       ArrRefMinVersionLen=${#ArrRefMinVersion[@]}
