@@ -35,6 +35,6 @@ for file in $FILES; do
           exit 1
         fi
       done
-    #fi
+    fi
   done
 done
