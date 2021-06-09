@@ -21,21 +21,24 @@ for file in $FILES; do
     #grep $PackageRef $file
     if [ "$found" ]; then
       RefMinVersion=${MinVersions[i+1]}
-      echo found=$found
       #echo RefMinVersion=$RefMinVersion
       ArrRefMinVersion=(${RefMinVersion//./ })
       ArrRefMinVersionLen=${#ArrRefMinVersion[@]}
       RefVersion=$(echo $found | grep -o 'Version="[0-9.]*"' | grep -o '[0-9.]*')
+      echo CurrentVersion=$RefVersion
       ArrRefVersion=(${RefVersion//./ })
       ArrRefVersionLen=${#ArrRefVersion[@]}
       MinLen=$(( $ArrRefMinVersionLen > $ArrRefVersionLen ? $ArrRefVersionLen : $ArrRefMinVersionLen ))
       for (( j=0; j<$MinLen; j++ ));
       do
         if [ ${ArrRefMinVersion[j]} -eq ${ArrRefVersion[j]} ]; then
+          echo ${ArrRefMinVersion[j]} -eq ${ArrRefVersion[j]}
           continue
         elif [ ${ArrRefMinVersion[j]} -lt ${ArrRefVersion[j]} ]; then
+          echo ${ArrRefMinVersion[j]} -lt ${ArrRefVersion[j]}
           break
         elif [ ${ArrRefMinVersion[j]} -gt ${ArrRefVersion[j]} ]; then
+          echo ${ArrRefMinVersion[j]} -gt ${ArrRefVersion[j]}
           echo "Found a reference to $Reference in $file that has lower version than $RefMinVersion"
           exit 1
         fi
