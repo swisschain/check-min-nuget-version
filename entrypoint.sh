@@ -7,7 +7,7 @@ ChecksCount=${#MinVersions[@]}
 
 FILES=$(find -type f -name '*.csproj')
 
-grep -rn PackageReference ./
+#grep -rn PackageReference ./
 
 for file in $FILES; do
   echo file=$file
@@ -17,11 +17,11 @@ for file in $FILES; do
     Reference=${MinVersions[i]}
     echo i=$i, Reference=\'$Reference\'
     found=$(grep $PackageRef $file | grep $Reference)
-    echo grep $PackageRef $file grep $Reference
-    grep $PackageRef $file
+    #echo grep $PackageRef $file grep $Reference
+    #grep $PackageRef $file
     if [ "$found" ]; then
       RefMinVersion=${MinVersions[i+1]}
-      echo RefMinVersion=$RefMinVersion
+      #echo RefMinVersion=$RefMinVersion
       ArrRefMinVersion=(${RefMinVersion//./ })
       ArrRefMinVersionLen=${#ArrRefMinVersion[@]}
       RefVersion=$(echo $found | grep -o 'Version="[0-9.]*"' | grep -o '[0-9.]*')
