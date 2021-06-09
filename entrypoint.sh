@@ -7,6 +7,8 @@ ChecksCount=${#MinVersions[@]}
 
 FILES=$(find -type f -name '*.csproj')
 
+grep -rn PackageReference ./
+
 for file in $FILES; do
   echo file=$file
   for (( i=0; i<$ChecksCount; i+=2 ));
