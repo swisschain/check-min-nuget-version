@@ -16,7 +16,9 @@ for file in $FILES; do
     #Reference='"'${MinVersions[i]}'"'
     Reference=${MinVersions[i]}
     echo i=$i, Reference=\'$Reference\'
-    found=$(grep $PackageRef $file | grep $Reference)
+    #found=$(grep $PackageRef $file | grep $Reference)
+    echo grep $PackageRef $file grep $Reference
+    grep $PackageRef $file
     if [ "$found" ]; then
       RefMinVersion=${MinVersions[i+1]}
       echo RefMinVersion=$RefMinVersion
