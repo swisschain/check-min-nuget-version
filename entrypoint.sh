@@ -1,7 +1,8 @@
 #!/bin/bash
 PackageRef='PackageReference'
 cat /version_list.txt
-MinVersions=`cat /version_list.txt`
+MinVersionsString=`cat /version_list.txt`
+MinVersions=($MinVersionsString)
 ChecksCount=${#MinVersions[@]}
 
 FILES=$(find -type f -name '*.csproj')
